@@ -1,6 +1,16 @@
-<h1>WELCOME TO ROCK PAPER SCISSORS</h1>
-<p>Win? <%= @winner %></p>
-<p>Tied? <%= @tie %></p>
-<p>Lost? <%= @loser %></p>
-<p>Your play: <%= @player %></p>
-<p>Computer's play: <%= @computer %></p>
+<h2>WELCOME TO:</h2>
+<h1>ROCK PAPER SCISSORS</h2>
+<h3>World Wide Championship 2016</h3>
+Your Play: <%= @rps_match.play.capitalize %><br>
+Computer's Play: <%= @rps_match.computer_play.capitalize %><br><br>
+<% if @rps_match.won? %>
+  <h2>You Won!</h2>
+  <p>You really are quite talented.</p>
+<% elsif @rps_match.lost? %>
+  <h2>You Lost :-(</h2>
+  <p>I guess I was wrong. You aren't so talented.</p>
+<% else %>
+  <h2>You Tied.</h2>
+  <p>Well that was boring.</p>
+<% end %>
+
