@@ -1,6 +1,3 @@
-require_relative 'config/environment'
-require 'pry'
-
 class GameApp < Sinatra::Base
   get '/rps/:play' do
     @rps_match = RPSGame.new(params[:play].to_sym)
